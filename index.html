@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task Priority Manager</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
-
         <header class="header">
-            <h1> Task Priority Manager</h1>
+            <h1>Task Priority Manager</h1>
             <p class="subtitle">Atur tugasmu dengan lebih rapi dan terprioritas</p>
         </header>
 
         <section class="form-box">
             <h3>Tambah Tugas</h3>
-
-            <div class="form-group">
-                <label>Judul Tugas</label>
-                <input type="text" id="taskInput" placeholder="Contoh: Belajar JavaScript">
+            <div class="form-row">
+                <div class="form-left">
+                    <div class="form-group1">
+                        <label>Judul Tugas</label>
+                        <input type="text" id="taskInput" placeholder="Contoh: Belajar JavaScript">
+                    </div>
+                    <div class="form-group1">
+                        <label>Deskripsi</label>
+                        <textarea id="descInput" placeholder="Contoh: Praktik function" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="form-group1">
+                        <label>Prioritas</label>
+                        <select id="priorityInput">
+                            <option value="tinggi">Tinggi</option>
+                            <option value="sedang">Sedang</option>
+                            <option value="rendah">Rendah</option>
+                        </select>
+                    </div>
+                    <div class="form-group1">
+                        <label>Deadline</label>
+                        <input type="date" id="deadlineInput">
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label>Deskripsi</label>
-                <textarea id="descInput" placeholder="Contoh: Praktik function" rows="3"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Prioritas</label>
-                <select id="priorityInput">
-                    <option value="tinggi"> Tinggi</option>
-                    <option value="sedang"> Sedang</option>
-                    <option value="rendah"> Rendah</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Deadline</label>
-                <input type="date" id="deadlineInput">
-            </div>
-
             <button id="addBtn">+ Tambah Tugas</button>
         </section>
 
@@ -55,12 +54,13 @@
                         <th>Deskripsi</th>
                         <th>Prioritas</th>
                         <th>Deadline</th>
+                        <th>Edit</th>
+                        <th>Hapus</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
         </section>
-
     </div>
 
     <footer class="footer">
@@ -69,5 +69,4 @@
 
     <script src="JS/script.js"></script>
 </body>
-
 </html>
