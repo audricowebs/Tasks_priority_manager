@@ -1,0 +1,66 @@
+.team {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #eeeeee;
+    width: 260px;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #fff;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #4b3f72;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.role {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-card {
+    display: inline-block;
+    background: #f1be73;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    opacity: 0.8;
+}
