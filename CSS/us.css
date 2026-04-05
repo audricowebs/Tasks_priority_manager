@@ -1,10 +1,62 @@
-.team {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #faf1fd, #f9dd8a);
+    color: #333;
+    width: 100%;
     min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: #4b3f72;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4b3f72;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f9dd8a;
+}
+
+.team {
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 100px 20px;
+    padding: 80px 20px;
     flex-wrap: wrap;
 }
 
@@ -16,10 +68,30 @@
     text-align: center;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+
 }
 
 .card img {
@@ -58,9 +130,12 @@
     border-radius: 20px;
     text-decoration: none;
     font-size: 14px;
+    font-weight: 600;
     transition: 0.3s;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.09);
 }
 
 .btn-card:hover {
-    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(241, 190, 115, 0.4);
 }

@@ -1,0 +1,349 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="id">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Task Priority Manager</title>-->
+<!--    <link rel="stylesheet" href="../CSS/testimony.css">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">-->
+<!--<body>-->
+
+<!--<nav class="navbar">-->
+<!--    <div class="logo">Task Priority Manager</div>-->
+<!--    <ul class="nav-links">-->
+<!--        <li><a href="../index.html">Home</a></li>-->
+<!--        <li><a href="testimony.html">Testimoni</a></li>-->
+<!--        <li><a href="us.html">About Us</a></li>-->
+<!--        <li><a href="../HTML/home.html" class="btn-nav">Mulai</a></li>-->
+<!--    </ul>-->
+<!--</nav>-->
+
+<!--<section class="testimoni-section">-->
+<!--    <h2>Testimoni Pengguna</h2>-->
+<!--    <div class="testimoni-cards">-->
+<!--        <div class="card">-->
+<!--            <p>"Aplikasi ini membantu saya mengatur prioritas tugas dengan lebih efisien. Sangat mudah digunakan!"</p>-->
+<!--            <h3>- Alfira Ramadhani</h3>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <p>"Task Priority Manager membuat pekerjaan tim menjadi lebih terorganisir. Highly recommended!"</p>-->
+<!--            <h3>- Audrico Keenan Setiadi</h3>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <p>"Saya bisa fokus pada tugas penting tanpa merasa kewalahan. Sangat membantu!"</p>-->
+<!--            <h3>- Kariim Faidlurrahman</h3>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="id">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Testimoni . PPLG</title>-->
+
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">-->
+
+<!--    <style>-->
+<!--        /* Reset dasar untuk menghilangkan celah bawaan browser */-->
+<!--        * {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+
+<!--        /* Body */-->
+<!--        body {-->
+<!--            font-family: 'Poppins', sans-serif;-->
+<!--            background: linear-gradient(180deg, #f9dd8a 0%, #faf1fd 100%);-->
+<!--            color: #333;-->
+<!--            min-height: 100vh;-->
+<!--            width: 100%;-->
+<!--            overflow-x: hidden; /* Mencegah scroll horizontal */-->
+<!--        }-->
+
+<!--        /* Navbar */-->
+<!--        .navbar {-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--            padding: 20px 5%;-->
+<!--            background-color: rgba(255, 255, 255, 0.7);-->
+<!--            backdrop-filter: blur(15px);-->
+<!--            -webkit-backdrop-filter: blur(15px);-->
+<!--            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);-->
+
+<!--            position: sticky;-->
+<!--            top: 0;-->
+<!--            left: 0;-->
+<!--            right: 0;-->
+<!--            width: 100%;-->
+<!--            z-index: 1000;-->
+<!--        }-->
+
+<!--        /* Logo */-->
+<!--        .logo {-->
+<!--            font-weight: 700;-->
+<!--            font-size: 1.2rem;-->
+<!--            color: #1e3a8a;-->
+<!--        }-->
+
+<!--        /* Navigation Links */-->
+<!--        .nav-links {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 30px;-->
+<!--            list-style: none;-->
+<!--        }-->
+
+<!--        .nav-links a {-->
+<!--            text-decoration: none;-->
+<!--            color: #4b3f72;-->
+<!--            font-weight: 500;-->
+<!--            font-size: 0.95rem;-->
+<!--            transition: all 0.3s ease;-->
+<!--        }-->
+
+<!--        .nav-links a:hover {-->
+<!--            color: #1e3a8a;-->
+<!--            transform: translateY(-2px);-->
+<!--        }-->
+
+<!--        /* Glassmorphism Card */-->
+<!--        .glass-card {-->
+<!--            background: rgba(255, 255, 255, 0.8);-->
+<!--            backdrop-filter: blur(12px);-->
+<!--            -webkit-backdrop-filter: blur(12px);-->
+<!--            border: 1px solid rgba(255, 255, 255, 0.5);-->
+<!--            border-radius: 24px;-->
+<!--            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);-->
+<!--            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);-->
+<!--        }-->
+
+<!--        .glass-card:hover {-->
+<!--            transform: translateY(-10px);-->
+<!--            box-shadow: 0 15px 45px rgba(31, 38, 135, 0.1);-->
+<!--        }-->
+
+<!--        /* Input Styling */-->
+<!--        .custom-input {-->
+<!--            width: 100%;-->
+<!--            padding: 12px 16px;-->
+<!--            border-radius: 12px;-->
+<!--            border: 1px solid #edf2f7;-->
+<!--            background: #fdfdfd;-->
+<!--            font-family: inherit;-->
+<!--            transition: all 0.3s ease;-->
+<!--        }-->
+
+<!--        .custom-input:focus {-->
+<!--            border-color: #1e3a8a;-->
+<!--            background: #fff;-->
+<!--            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.08);-->
+<!--            outline: none;-->
+<!--        }-->
+
+<!--        /* Animasi */-->
+<!--        .fade-in {-->
+<!--            animation: fadeIn 0.6s ease-out forwards;-->
+<!--        }-->
+
+<!--        @keyframes fadeIn {-->
+<!--            from {-->
+<!--                opacity: 0;-->
+<!--                transform: translateY(30px);-->
+<!--            }-->
+<!--            to {-->
+<!--                opacity: 1;-->
+<!--                transform: translateY(0);-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body class="p-6 md:p-12">-->
+
+<!--<nav class="navbar">-->
+<!--        <div class="logo">Task Priority Manager</div>-->
+<!--        <ul class="nav-links">-->
+<!--            <li><a href="../index.html">Home</a></li>-->
+<!--            <li><a href="testimony.html">Testimoni</a></li>-->
+<!--            <li><a href="us.html">About Us</a></li>-->
+<!--            <li><a href="../HTML/home.html" class="btn-nav">Mulai</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+<!--<div class="max-w-6xl mx-auto">-->
+<!--    <header class="text-center mb-16">-->
+<!--        <h2 class="text-4xl font-bold text-blue-950 mb-3">Apa yang klien katakan...</h2>-->
+<!--        <div class="h-1 w-20 bg-orange-500 mx-auto rounded-full mb-4"></div>-->
+<!--        <p class="text-orange-600 font-bold tracking-widest text-sm cursor-pointer hover:text-orange-700 transition">-->
+<!--            LIHAT TESTIMONI LAINNYA-->
+<!--        </p>-->
+<!--    </header>-->
+
+<!--    <section class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-100 mb-16">-->
+<!--        <h3 class="text-xl font-bold text-blue-950 mb-6">Tulis Pengalaman Anda</h3>-->
+<!--        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">-->
+<!--            <div>-->
+<!--                <label class="block text-xs font-bold text-gray-500 mb-2 uppercase">Nama Lengkap</label>-->
+<!--                <input type="text" id="userName" placeholder="Contoh: Kariim F." class="custom-input w-full p-3 rounded-xl bg-gray-50 text-sm">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label class="block text-xs font-bold text-gray-500 mb-2 uppercase">Rating (1-5)</label>-->
+<!--                <input type="number" id="userRating" min="1" max="5" placeholder="5" class="custom-input w-full p-3 rounded-xl bg-gray-50 text-sm">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="mb-6">-->
+<!--            <label class="block text-xs font-bold text-gray-500 mb-2 uppercase">Pesan Testimoni</label>-->
+<!--            <textarea id="userFeedback" rows="3" placeholder="Bagaimana layanan kami menurut Anda?" class="custom-input w-full p-3 rounded-xl bg-gray-50 text-sm"></textarea>-->
+<!--        </div>-->
+<!--        <button onclick="tambahTestimoni()" class="w-full bg-blue-950 text-white font-bold py-4 rounded-xl hover:bg-blue-900 transition-all active:scale-95 shadow-lg shadow-blue-900/20">-->
+<!--            Kirim Testimoni Sekarang-->
+<!--        </button>-->
+<!--    </section>-->
+
+<!--    <div id="testimonialContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    // Data Awal-->
+<!--    let testimoniData = [-->
+<!--        {-->
+<!--            nama: "Torie Rusche",-->
+<!--            rating: 5,-->
+<!--            waktu: "11 HARI LALU",-->
+<!--            pesan: "Saat kami mencari firma desain untuk blog perusahaan kami, Windmill tampil menonjol sejak awal sebagai tim yang profesional."-->
+<!--        },-->
+<!--        {-->
+<!--            nama: "Morgan Sizemore",-->
+<!--            rating: 5,-->
+<!--            waktu: "12 HARI LALU",-->
+<!--            pesan: "Jika Anda mencari partner yang detail-oriented dan berbakat, mereka adalah pilihan yang sangat tepat!"-->
+<!--        },-->
+<!--        {-->
+<!--            nama: "Cara Lundrigan",-->
+<!--            rating: 5,-->
+<!--            waktu: "1 BULAN LALU",-->
+<!--            pesan: "Proses rebrand dan peluncuran website baru kami berjalan luar biasa. Sangat membantu menentukan identitas kami."-->
+<!--        }-->
+<!--    ];-->
+
+<!--    function renderTestimoni() {-->
+<!--        const container = document.getElementById('testimonialContainer');-->
+<!--        container.innerHTML = '';-->
+
+<!--        testimoniData.forEach((item, index) => {-->
+<!--            const bintang = '<i class="fas fa-star text-orange-500 mr-1"></i>'.repeat(item.rating);-->
+
+<!--            const card = `-->
+<!--                    <div class="glass-card p-8 rounded-[2rem] flex flex-col h-full fade-in" style="animation-delay: ${index * 0.1}s">-->
+<!--                        <div class="flex justify-between items-start mb-4">-->
+<!--                            <div class="flex-1">-->
+<!--                                <h4 class="font-bold text-blue-950 text-lg leading-tight">${item.nama}</h4>-->
+<!--                                <div class="flex my-2 text-[10px]">${bintang}</div>-->
+<!--                                <p class="text-[9px] font-black text-gray-400 tracking-widest uppercase">${item.waktu}</p>-->
+<!--                            </div>-->
+<!--                            <div class="bg-white p-2 rounded-lg shadow-sm border border-gray-50">-->
+<!--                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_\"G\"_Logo.svg" class="w-4 h-4" alt="G">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="text-gray-600 text-sm leading-relaxed mt-2 italic">"${item.pesan}"</p>-->
+<!--                    </div>-->
+<!--                `;-->
+<!--            container.innerHTML += card;-->
+<!--        });-->
+<!--    }-->
+
+<!--    function tambahTestimoni() {-->
+<!--        const namaInput = document.getElementById('userName');-->
+<!--        const ratingInput = document.getElementById('userRating');-->
+<!--        const pesanInput = document.getElementById('userFeedback');-->
+
+<!--        if (namaInput.value && ratingInput.value && pesanInput.value) {-->
+<!--            // Tambahkan ke awal array-->
+<!--            testimoniData.unshift({-->
+<!--                nama: namaInput.value,-->
+<!--                rating: Math.min(Math.max(parseInt(ratingInput.value), 1), 5), // Batasi 1-5-->
+<!--                waktu: "BARU SAJA",-->
+<!--                pesan: pesanInput.value-->
+<!--            });-->
+
+<!--            // Reset Form-->
+<!--            namaInput.value = '';-->
+<!--            ratingInput.value = '';-->
+<!--            pesanInput.value = '';-->
+
+<!--            // Render Ulang-->
+<!--            renderTestimoni();-->
+<!--        } else {-->
+<!--            alert("Tolong isi semua bidang yang tersedia ya!");-->
+<!--        }-->
+<!--    }-->
+
+<!--    // Inisialisasi awal-->
+<!--    renderTestimoni();-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni - Task Priority Manager</title>
+    <link rel="stylesheet" href="../CSS/testimony.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Task Priority Manager</div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="testimony.html">Testimoni</a></li>
+        <li><a href="us.html">About Us</a></li>
+        <li><a href="../HTML/home.html" class="btn-nav">Mulai</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <header class="header-section">
+        <h1>Apa yang klien katakan...</h1>
+        <p class="view-more">LIHAT TESTIMONI LAINNYA</p>
+    </header>
+
+    <section class="form-container glass-card">
+        <h3>Tulis Pengalaman Anda</h3>
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="userName" placeholder="Contoh: Kariim F.">
+            </div>
+            <div class="input-group">
+                <label>Rating (1-5)</label>
+                <input type="number" id="userRating" min="1" max="5" placeholder="5">
+            </div>
+        </div>
+        <div class="input-group">
+            <label>Pesan Testimoni</label>
+            <textarea id="userFeedback" rows="3" placeholder="Bagaimana layanan kami menurut Anda?"></textarea>
+        </div>
+        <button id="submitBtn" class="btn-submit">Kirim Testimoni Sekarang</button>
+    </section>
+
+    <div id="testimonialGrid" class="testimonial-grid">
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
