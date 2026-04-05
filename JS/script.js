@@ -1,4 +1,4 @@
-    let daftar = [];
+    let daftar = JSON.parse(localStorage.getItem("dataTugas")) || [];
     let editIndex = -1;
 
     document.getElementById("addBtn").onclick = function () {
@@ -17,8 +17,10 @@
             daftar[editIndex] = { ...daftar[editIndex], nama, deskripsi, prioritas, start, deadline };
             editIndex = -1;
             alert("Data berhasil di update!");
+            localStorage.setItem("dataTugas", JSON.stringify(daftar));
         } else {
             daftar.push({ nama, deskripsi, prioritas, start, deadline, selesai: false });
+            localStorage.setItem("dataTugas", JSON.stringify(daftar));
         }
 
         document.getElementById("taskInput").value = "";
@@ -39,6 +41,7 @@
             if (pB != pA) return pB - pA;
             return new Date(a.deadline) - new Date(b.deadline);
         });
+        localStorage.setItem("dataTugas", JSON.stringify(daftar));
     }
 
     function cekDeadline(tanggal) {
@@ -67,12 +70,14 @@
         if (confirm("Yakin hapus?")) {
             if (editIndex == index) editIndex = -1;
             daftar.splice(index, 1);
+            localStorage.setItem("dataTugas", JSON.stringify(daftar));
             tampilkan();
         }
     }
 
     function updateData(index) {
         daftar[index].selesai = !daftar[index].selesai; 
+        localStorage.setItem("dataTugas", JSON.stringify(daftar));
         tampilkan();
     }
 
@@ -114,4 +119,4 @@
         }
     }
 
-    tampilkan();
+tampilkan();
