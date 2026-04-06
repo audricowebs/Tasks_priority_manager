@@ -1,16 +1,23 @@
 let testimoniList = JSON.parse(localStorage.getItem("dataTestimoni")) || [];
+
 document.getElementById("submitBtn").onclick = tampilkanTestimoni;
 
-function tampilkanTestimoni() {
+function getStars(rating) {
+    rating = Math.max(1, Math.min(5, parseInt(rating)));
+    return "★".repeat(rating) + "☆".repeat(5 - rating);
+}
 
+function tampilkanTestimoni() {
     let nama = document.getElementById("userName").value.trim();
     let rating = document.getElementById("userRating").value;
     let feedback = document.getElementById("userFeedback").value.trim();
 
-    if (nama == "" || rating == "" || feedback == "") {
+    if (nama === "" || rating === "" || feedback === "") {
         alert("Isi semua field testimoni!");
         return;
     }
+
+    rating = Math.max(1, Math.min(5, parseInt(rating)));
 
     testimoniList.push({ nama, rating, feedback });
     localStorage.setItem("dataTestimoni", JSON.stringify(testimoniList));
@@ -26,17 +33,25 @@ function renderTestimoni() {
     let testimonialGrid = document.getElementById("testimonialGrid");
     testimonialGrid.innerHTML = "";
 
-    for (let i = 0; i < testimoniList.length; i++) {
+    testimoniList.forEach((data, index) => {
         let card = document.createElement("div");
+        card.classList.add("testi-card");
 
         card.innerHTML = `
-            <h3>${testimoniList[i].nama}</h3>
-            <p>Rating: ${testimoniList[i].rating} / 5</p>
-            <p>${testimoniList[i].feedback}</p>
+            <div class="testi-header">
+                <div>
+                    <div class="testi-name">${data.nama}</div>
+                    <div class="testi-date">${new Date().toLocaleDateString()}</div>
+                </div>
+                <div class="testi-stars">${getStars(data.rating)}</div>
+            </div>
+            <div class="testi-text">${data.feedback}</div>
         `;
 
+        card.style.animationDelay = `${index * 0.1}s`;
+
         testimonialGrid.appendChild(card);
-    }
+    });
 }
 
 renderTestimoni();
